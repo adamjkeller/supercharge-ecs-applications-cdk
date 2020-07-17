@@ -6,6 +6,5 @@ RUN apk add -U \
     pip3 install awscli boto3
 
 COPY ./queue_fargate/queue_service.py /queue_service.py
-#COPY ../queue_fargate/queue_fargate/queue_service.py /queue_service.py
 
 CMD ["/queue_service.py","receive"]
