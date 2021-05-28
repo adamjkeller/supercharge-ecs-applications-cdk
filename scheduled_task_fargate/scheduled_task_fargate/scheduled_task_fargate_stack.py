@@ -27,8 +27,7 @@ class ScheduledTaskFargateStack(core.Stack):
         #DYNAMICALLY PULL THIS DOWN
         sqs_queue = aws_sqs.Queue.from_queue_arn(
             self, "Queue",
-            "arn:aws:sqs:us-west-2:317933635802:queue-fargate-QueueServiceEcsProcessingQueue354FA9E5-1GJOWKT1W18XX"
-            #core.Fn.import_value('QueueServiceSQSQueueArnAC83255E')
+            "arn:aws:sqs:us-west-2:123:queue-fargate-QueueServiceEcsProcessingQueue354FA9E5-1GJOWKT1W18XX"
         )
         
         sqs_queue.grant_send_messages(self.scheduled_task_fargate.task_definition.task_role)
